@@ -65,6 +65,6 @@ In order to send data to the server use
 
 `client.send({ message: "Hi server" });`
 
-#### Other information
+## Other information
 
 This is a work in progress.
