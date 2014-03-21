@@ -4,3 +4,4 @@ bin-debug
 html-template
 .actionScriptProperties
 .project
+.DS_Store
