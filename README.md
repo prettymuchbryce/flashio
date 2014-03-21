@@ -1,6 +1,6 @@
 > flashio facilitates JSON/Object communication from Flash to node.js over a TCP socket.
 
-The goal of this project is to create a reliable way for Flash to talk to node.js over a typical TCP (not a websocket) connection. 
+The goal of this project is to create a reliable way for Flash to talk to node.js over a typical (not a websocket) TCP connection. 
 
 ## Server (node.js)
 
