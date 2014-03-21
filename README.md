@@ -28,7 +28,7 @@ Events are
 * .on('**error**', function(error)) *emitted on error*
 * .on('**connect**', function(data)) *emitted on connect*
 
-All function paylods (data or error) contain a data.socket or error.socket value representing a client's socket.
+All function payloads (data or error) contain a data.socket or error.socket value representing a client's socket.
 Each socket has a unique id property via `data.socket.id`
 
 In order to send data to the client use
