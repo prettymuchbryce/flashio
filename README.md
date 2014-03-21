@@ -12,7 +12,7 @@ Install via npm `npm install flashio`
 
 You can create a server via
 
-    var flashio = require('./flashio.js');
+    var flashio = require('flashio);
     var server = flashio.createServer(port);
 
 
