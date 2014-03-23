@@ -1,6 +1,7 @@
 var EventEmitter = require('events').EventEmitter;
 var net = require('net');
 var util = require('util');
+var idToSocketMap = {};
 
 var Server = function(port) {
     var self = this;
@@ -8,6 +9,7 @@ var Server = function(port) {
 
     var server = net.createServer(function(socket) {
         socket.id = clientsSoFar;
+        idToSocketMap[socket.id] = socket;
         clientsSoFar++;
 
         socket.on('socket', function(socket) {
@@ -55,6 +57,9 @@ var Server = function(port) {
 
         // Client has exited, or otherwise closed their socket.
         socket.on('close', function() {
+            if (idToSocketMap[socket.id] !== undefined) {
+                delete idToSocketMap[socket.id];
+            }
             self.emit('end', { socket: socket});
         });
 
@@ -66,6 +71,15 @@ var Server = function(port) {
     });
 
     this.send = function(socket, messageObject) {
+        var message = JSON.stringify(messageObject);
+        socket.write(message + "\0", 'utf8');
+    };
+
+    this.sendToId = function(id, messageObject) {
+        if (idToSocketMap[id] === undefined) {
+            return;
+        }
+        var socket = idToSocketMap[id];
         var message = JSON.stringify(messageObject);
         socket.write(message + "\0", 'utf8');
     };
