@@ -1,6 +1,6 @@
 {
     "name": "flashio",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "TCP Socket wrapper for Flash's XMLSocket",
     "keywords": ["Flash", "Socket", "as3"],
     "homepage": "http://www.github.com/prettymuchbryce/flashio",

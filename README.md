@@ -35,6 +35,10 @@ In order to send data to the client use
 
 `server.send(socket, { message: "Hi client" });`
 
+or
+
+`server.sendToId(socket.id, { message: "Hi client" });`
+
 ## Client (flash)
 
 ### Installation
