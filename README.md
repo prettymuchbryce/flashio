@@ -24,7 +24,7 @@ You can then listen to various events via
 
 Events are
 * .on('**data**', function(data)) *emitted when client sends data*
-* .on('**close**', function(data)) *emitted when client disconects*
+* .on('**end**', function(data)) *emitted when client disconnects*
 * .on('**error**', function(error)) *emitted on error*
 * .on('**connect**', function(data)) *emitted on connect*
 
